@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET product list page. */
 router.get('/', function (req, res, next) {
-  res.render('productList', { title: 'Express', products: getAllProducts() });
+  res.render('productList', { title: 'Express', products: getAllProducts(), pageName: "products" });
 });
 
 // get product detail page
@@ -12,6 +12,7 @@ router.get('/:pid', function (req, res, next) {
   const product = getProductByCode(productId);
   if (product) {
     res.render('productDetails', { title: `Fiche produit ${productId}`, product });
+    return;
   }
   res.redirect("/404");
 });
