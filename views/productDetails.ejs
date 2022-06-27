@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <%- include("partials/imports/common.ejs") %>
+  <link rel='stylesheet' href='/stylesheets/common.css' />
+  <link rel='stylesheet' href='/stylesheets/home.css' />
+</head>
+
+<body>
+  <%- include("partials/header")%>
+  <div class="global-container container">
+    <h1><%= product.name %></h1>
+    <p><%= product.description%></p>
+  </div>
+  <%- include("partials/footer")%>
+</body>
+
+</html>

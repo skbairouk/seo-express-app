@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <%- include("partials/imports/common.ejs") %>
+  <link rel='stylesheet' href='/stylesheets/common.css' />
+  <link rel='stylesheet' href='/stylesheets/home.css' />
+</head>
+
+<body>
+  <%- include("partials/header")%>
+  <!-- <p>Welcome to <%= title %> -->
+  <div class="global-container container">
+    <h1>Product List page</h1>
+
+    <div class="product-list">
+      <% for(var i=0; i<products.length; i++) {%>
+      <div class="grid">
+        <a href="/products/<%= products[i].code %>">
+          <div class="image-container">
+            <img src="/images/not_found.jpg" alt="<%= products[i].name %>" width="200px" height="200px" />
+          </div>
+        </a>
+        <div class="info-container">
+          <div class="name">
+            <a href="/products/<%= products[i].code %>">
+              <%= products[i].name %>
+            </a>
+          </div>
+          <div class="description">
+            <%= products[i].description %>
+          </div>
+          <div class="price">
+            <%= products[i].price %>
+          </div>
+        </div>
+
+      </div>
+      <% } %>
+    </div>
+
+  </div>
+  <%- include("partials/footer")%>
+</body>
+
+</html>
